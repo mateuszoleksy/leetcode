@@ -1,0 +1,19 @@
+#include <gtest/gtest.h>
+#include <iostream>
+#include "../scripts/fibonacci.h"
+
+using namespace std;
+
+TEST(FibonacciTest, BasicAssertions) {
+    EXPECT_EQ(fibonacci(0,1,3), 2); // 0, 1, 1, 2, 3, 5, 8, 13, ...
+    EXPECT_EQ(fibonacci(0,1,4), 3); // 0, 1, 1, 2, 3, 5, 8, 13, ...
+    EXPECT_EQ(fibonacci(0,1,5), 5); // 0, 1, 1, 2, 3, 5, 8, 13, ...
+    EXPECT_EQ(fibonacci(0,1,6), 8); // 0, 1, 1, 2, 3, 5, 8, 13, ...
+    EXPECT_EQ(fibonacci(0,1,7), 13); // 0, 1, 1, 2, 3, 5, 8, 13, ...
+    EXPECT_EQ(fibonacci(0,1,8), 21); // 0, 1, 1, 2, 3, 5, 8, 13, ...
+}
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
